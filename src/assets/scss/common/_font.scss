@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 300;
+	src: local(※),
+		/* IE fix */
+		url(../fonts/Roboto-Light.woff2) format('woff2'),
+		url(../fonts/Roboto-Light.woff) format('woff')
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 400;
+	src: local(※),
+		/* IE fix */
+		url(../fonts/Roboto-Regular.woff2) format('woff2'),
+		url(../fonts/Roboto-Regular.woff) format('woff')
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 500;
+	src: local(※),
+		/* IE fix */
+		url(../fonts/Roboto-Medium.woff2) format('woff2'),
+		url(../fonts/Roboto-Medium.woff) format('woff')
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 700;
+	src: local(※),
+		/* IE fix */
+		url(../fonts/Roboto-Bold.woff2) format('woff2'),
+		url(../fonts/Roboto-Bold.woff) format('woff')
+}

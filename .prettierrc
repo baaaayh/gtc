@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "printWidth": 300,
+    "tabWidth": 4,
+    "proseWrap": "preserve",
+    "singleQuote": true,
+    "semi": true,
+    "useTabs": false,
+    "vueIndentScriptAndStyle": true
+}
