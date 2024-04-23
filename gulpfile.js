@@ -24,6 +24,11 @@ const CONFIG = {
             STYLE: './src/' + ASSETS + 'scss',
             SCRIPT: './src/' + ASSETS + 'script',
             LIBRARY: './src/' + ASSETS + 'library',
+            MO_FONTS: './src/' + ASSETS + 'mobile/' + 'fonts',
+            MO_IMAGES: './src/' + ASSETS + 'mobile/' + 'images',
+            MO_STYLE: './src/' + ASSETS + 'mobile/' + 'scss',
+            MO_SCRIPT: './src/' + ASSETS + 'mobile/' + 'script',
+            MO_LIBRARY: './src/' + ASSETS + 'mobile/' + 'library',
         },
     },
     deploy: {
@@ -35,6 +40,11 @@ const CONFIG = {
             STYLE: './dist/' + RESOURCES + ASSETS + 'css',
             SCRIPT: './dist/' + RESOURCES + ASSETS + 'script',
             LIBRARY: './dist/' + RESOURCES + ASSETS + 'library',
+            MO_FONTS: './dist/' + RESOURCES + ASSETS + 'mobile/' + 'fonts',
+            MO_IMAGES: './dist/' + RESOURCES + ASSETS + 'mobile/' + 'images',
+            MO_STYLE: './dist/' + RESOURCES + ASSETS + 'mobile/' + 'css',
+            MO_SCRIPT: './dist/' + RESOURCES + ASSETS + 'mobile/' + 'script',
+            MO_LIBRARY: './dist/' + RESOURCES + ASSETS + 'mobile/' + 'library',
         },
     },
 };
@@ -65,6 +75,15 @@ function CompileCSS() {
             )
             .pipe(dest(CONFIG.deploy.ASSETS.STYLE));
         resolve();
+        src(CONFIG.workspace.ASSETS.MO_STYLE + '/*.scss')
+            .pipe(
+                sass({
+                    outputStyle: 'expanded',
+                    // expanded ,compressed
+                }).on('error', sass.logError)
+            )
+            .pipe(dest(CONFIG.deploy.ASSETS.MO_STYLE));
+        resolve();
     });
 }
 
@@ -86,6 +105,19 @@ function Imagemin() {
                 ])
             )
             .pipe(dest(CONFIG.deploy.ASSETS.IMAGES));
+        src(CONFIG.workspace.ASSETS.MO_IMAGES + '/**/*.*')
+            .pipe(newer(CONFIG.deploy.ASSETS.MO_IMAGES))
+            .pipe(
+                imagemin([
+                    imagemin.gifsicle({ interlaced: false }),
+                    imagemin.mozjpeg({ quality: 95, progressive: false }),
+                    imagemin.optipng({ optimizationLevel: 5 }),
+                    // imagemin.svgo({
+                    //     plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+                    // }),
+                ])
+            )
+            .pipe(dest(CONFIG.deploy.ASSETS.MO_IMAGES));
         resolve();
     });
 }
@@ -96,6 +128,7 @@ function Imagemin() {
 function Library() {
     return new Promise((resolve) => {
         src(CONFIG.workspace.ASSETS.LIBRARY + '/**/*').pipe(dest(CONFIG.deploy.ASSETS.LIBRARY));
+        src(CONFIG.workspace.ASSETS.MO_LIBRARY + '/**/*').pipe(dest(CONFIG.deploy.ASSETS.MO_LIBRARY));
         resolve();
     });
 }
@@ -106,6 +139,7 @@ function Library() {
 function Script() {
     return new Promise((resolve) => {
         src(CONFIG.workspace.ASSETS.SCRIPT + '/**/*').pipe(dest(CONFIG.deploy.ASSETS.SCRIPT));
+        src(CONFIG.workspace.ASSETS.MO_SCRIPT + '/**/*').pipe(dest(CONFIG.deploy.ASSETS.MO_SCRIPT));
         resolve();
     });
 }
@@ -118,6 +152,9 @@ function Font() {
         src(CONFIG.workspace.ASSETS.FONTS + '/**/*')
             .pipe(newer(CONFIG.deploy.ASSETS.FONTS))
             .pipe(dest(CONFIG.deploy.ASSETS.FONTS));
+        src(CONFIG.workspace.ASSETS.MO_FONTS + '/**/*')
+            .pipe(newer(CONFIG.deploy.ASSETS.MO_FONTS))
+            .pipe(dest(CONFIG.deploy.ASSETS.MO_FONTS));
         resolve();
     });
 }
@@ -180,6 +217,9 @@ function Watch() {
     watch(CONFIG.workspace.ASSETS.STYLE + '/**/*.scss', CompileCSS).on('change', browserSync.reload);
     watch(CONFIG.workspace.ASSETS.IMAGES + '/**/**/*.*', Imagemin);
     watch(CONFIG.workspace.ASSETS.SCRIPT + '/**/*.js', Script).on('change', browserSync.reload);
+    watch(CONFIG.workspace.ASSETS.MO_STYLE + '/**/*.scss', CompileCSS).on('change', browserSync.reload);
+    watch(CONFIG.workspace.ASSETS.MO_IMAGES + '/**/*.*', Imagemin);
+    watch(CONFIG.workspace.ASSETS.MO_SCRIPT + '/*.js', Script).on('change', browserSync.reload);
     watch(CONFIG.workspace.LANG, Lang).on('change', browserSync.reload);
     /* 1208 추가 */
     watch(CONFIG.workspace.ASSETS.IMAGES + '/*.json', Lottie).on('change', browserSync.reload);

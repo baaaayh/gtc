@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-200.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-200.woff) format("woff");
+    font-weight: 200;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-300.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-300.woff) format("woff");
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-400.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-400.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-500.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-500.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-600.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-600.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: 'SamsungOneKR';
+    src: local(※),
+            url(../../fonts/SamsungOneKorean-700.woff2) format("woff2"),
+            url(../../fonts/SamsungOneKorean-700.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 100;
+	src: local(※),
+		/* IE fix */
+		url(../../fonts/Roboto-Thin.woff2) format('woff2'),
+		url(../../fonts/Roboto-Thin.woff) format('woff');
+    font-weight: 100;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+    
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 300;
+	src: local(※),
+		/* IE fix */
+		url(../../fonts/Roboto-Light.woff2) format('woff2'),
+		url(../../fonts/Roboto-Light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+    
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 400;
+	src: local(※),
+		/* IE fix */
+		url(../../fonts/Roboto-Regular.woff2) format('woff2'),
+		url(../../fonts/Roboto-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 500;
+	src: local(※),
+		/* IE fix */
+		url(../../fonts/Roboto-Medium.woff2) format('woff2'),
+		url(../../fonts/Roboto-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 700;
+	src: local(※),
+		/* IE fix */
+		url(../../fonts/Roboto-Bold.woff2) format('woff2'),
+		url(../../fonts/Roboto-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
