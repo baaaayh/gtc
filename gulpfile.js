@@ -198,7 +198,7 @@ function BrowserSync() {
 }
 
 /**
- * ? @task : Lottie 1208 추가
+ * ? @task : Lottie
  */
 function Lottie() {
     return new Promise((resolve) => {
@@ -220,9 +220,6 @@ function Watch() {
     watch(CONFIG.workspace.ASSETS.MO_STYLE + '/**/*.scss', CompileCSS).on('change', browserSync.reload);
     watch(CONFIG.workspace.ASSETS.MO_IMAGES + '/**/*.*', Imagemin);
     watch(CONFIG.workspace.ASSETS.MO_SCRIPT + '/*.js', Script).on('change', browserSync.reload);
-    watch(CONFIG.workspace.LANG, Lang).on('change', browserSync.reload);
-    /* 1208 추가 */
-    watch(CONFIG.workspace.ASSETS.IMAGES + '/*.json', Lottie).on('change', browserSync.reload);
 }
 
 const defaultTasks = [CompileCSS, EJS, Script, Library, Font, Lang, Imagemin, Lottie, BrowserSync, Watch];

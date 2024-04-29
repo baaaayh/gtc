@@ -435,6 +435,7 @@ button, .clsbtn_r {
             }
             a {
                 display: flex;
+                width: 100%;
                 flex-direction: column;
                 padding: 28px 0;
             }
@@ -565,6 +566,9 @@ button, .clsbtn_r {
         font-size: 14px;
         font-weight: 400;
         color: #fff;
+        span {
+            font-family: "Roboto"
+        }
     }
 
     
@@ -584,6 +588,7 @@ button, .clsbtn_r {
             color: #fff;
             span {
                 display: inline-block;
+                font-family: "Roboto";
                 font-weight: 100;
                 line-height: 1;
                 vertical-align: unset;
@@ -650,14 +655,14 @@ button, .clsbtn_r {
             width: 16px;
             height: 16px;
             background: url("../images/main/icon_prev.svg") right center / auto no-repeat;
-            transform: translateY(-50%) rotate(-90deg);
+            transform: translateY(-50%) rotate(90deg);
             transition: 0.16s ease;
         }
     }
     &.active {
         button {
             &::before {
-                transform: translateY(-50%) rotate(85deg);
+                transform: translateY(-50%) rotate(-85deg);
             }
         }
     }
